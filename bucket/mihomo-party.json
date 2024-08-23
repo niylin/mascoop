@@ -1,0 +1,43 @@
+{
+    "version": "1.0.3",
+    "description": "A simple Python Pydantic model for Honkai: Star Rail parsed data from the mihomo-party API.",
+    "homepage": "https://github.com/pompurin404/mihomo-party",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/pompurin404/mihomo-party/releases/download/v1.0.3/mihomo-party-windows-amd64-1.0.3.7z",
+            "hash": "0ab2c6aad6e12300c0c34151c60bd243581d89bf6dbde665109353c053a833db"
+        },
+        "32bit": {
+            "url": "https://github.com/pompurin404/mihomo-party/releases/download/v1.0.3/mihomo-party-windows-386-v1.0.3.7z",
+            "hash": "eb2b01fdcc8b5492f508c88183418ff2cbb23265978e1d789bbb08915a348fab"
+        },
+        "arm64": {
+            "url": "https://github.com/pompurin404/mihomo-party/releases/download/v1.0.3/mihomo-party-windows-arm64-v1.0.3.7z",
+            "hash": "bdcb04e3cec23db7db199ca23c96940c15c47c057587477c154f2e8de17c57ef"
+        }
+    },
+    "pre_install": "Get-ChildItem \"$dir\\mihomo*.exe\" | Rename-Item -NewName 'mihomo.exe'",
+    "bin": [
+        "mihomo.exe",
+        [
+            "mihomo.exe",
+            "clash"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/pompurin404/mihomo-party/releases/download/v$version/mihomo-party-windows-v$version-x64-portable.7z"
+            },
+            "32bit": {
+                "url": "https://github.com/pompurin404/mihomo-party/releases/download/v$version/mihomo-party-windows-v$version-ia32-portable.7z"
+            },
+            "arm64": {
+                "url": "https://github.com/pompurin404/mihomo-party/releases/download/v$version/mihomo-party-windows-v$version-arm64-portable.7z"
+            }
+        }
+    }
+}
+
